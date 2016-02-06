@@ -1,0 +1,25 @@
+{
+  "name": "rust-bridge-lite",
+  "version": "0.0.1",
+  "description": "Simple rust to node bridge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-addon": "node-gyp configure && node-gyp build",
+    "clean-addon": "node-gyp clean",
+    "build-rust": "cargo rustc --release -- -L lib\\build\\Release",
+    "clean-rust": "cargo clean",
+    "install-rust": "xcopy target\\release\\embed.* build\\Release /Y",
+    "rebuild-rust": "npm run build-rust && npm run install-rust",
+    "build-lib": "cd lib && node-gyp configure && node-gyp build",
+    "build": "npm run build-lib && npm run build-rust && npm run build-addon && npm run install-rust",
+    "clean": "npm run clean-rust && npm run clean-addon",
+    "install": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nan": "^2.2.0",
+    "node-gyp": "^3.2.1"
+  }
+}
