@@ -1,6 +1,7 @@
+#![feature(libc)]
 extern crate libc;
 
-#[link(name = "mylib")]
+#[link(name = "mysquare", kind = "static")]
 extern {
     fn square(value: i32) -> i32;
 }

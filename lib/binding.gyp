@@ -1,7 +1,7 @@
 {
 	"targets": [{
-		"target_name": "mylib",
-		"sources": ["mylib.cc" ],
+		"target_name": "mysquare",
+		"sources": ["mysquare.cc" ],
         'include_dirs': [
           '.',
         ],

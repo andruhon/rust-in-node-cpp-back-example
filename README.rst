@@ -14,8 +14,6 @@ What's inside:
 See more general Rust in node examples here:
 https://github.com/andruhon/rust-in-node-examples
 
-Windows only for this moment.
-
 Installation
 ------------
 
@@ -30,7 +28,7 @@ Running
 Why
 ---
 
-It is not really possible to embed node extensions compiled with GCC back into NodeJS,
+On windows it is not really possible to embed node extensions compiled with GCC back into NodeJS,
 because NodeJS for Windows is compiled with MSVC and addons should be compiled and linked with MSVC as well.
 So it is not possible to use custom build script which uses gcc crate for ths purpose.
 
